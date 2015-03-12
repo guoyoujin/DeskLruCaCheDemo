@@ -21,7 +21,7 @@ import com.summerxia.dateselector.wheelview.WheelView;
 /**
   * 项目名称:  DateSelector   
   * 类名称:   DateSelectorWheelView 
-  * 创建人:    xhl 
+  * 创建人:    gyj 
   * 创建时间:  2015-1-14 下午5:07:34     
   * 版本:      v1.0  
   * 类描述:

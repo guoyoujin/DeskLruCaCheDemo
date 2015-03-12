@@ -14,7 +14,7 @@ import com.summerxia.dateselector.wheelview.WheelView;
   * 类描述:	地址选择器的自定义布局   
   * 项目名称:  DateSelector   
   * 类名称:   AreasWheel 
-  * 创建人:    xhl  
+  * 创建人:    gyj  
   * 创建时间:  2015-2-5 上午10:11:53     
   * 版本:      v1.0
  */

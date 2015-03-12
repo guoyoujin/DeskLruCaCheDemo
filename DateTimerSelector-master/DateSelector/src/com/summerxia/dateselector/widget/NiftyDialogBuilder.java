@@ -23,7 +23,7 @@ import com.summerxia.dateselector.animation.Effectstype;
 
 /**
  * 
- * @author xhl 2014-10-05
+ * @author gyj 2014-10-05
  */
 public class NiftyDialogBuilder extends Dialog implements DialogInterface {
 	/**

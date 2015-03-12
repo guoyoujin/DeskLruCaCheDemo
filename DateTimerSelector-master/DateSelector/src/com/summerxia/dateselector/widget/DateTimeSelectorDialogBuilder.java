@@ -13,7 +13,7 @@ import com.summerxia.dateselector.R;
 import com.summerxia.dateselector.utils.DateUtils;
 
 /**
- * 项目名称: QYH 类名称: DateTimeSelectorDialogBuilder 创建人: xhl 创建时间: 2014-12-24
+ * 项目名称: QYH 类名称: DateTimeSelectorDialogBuilder 创建人: gyj 创建时间: 2014-12-24
  * 下午2:15:14 版本: v1.0 类描述: 选择生日日期的Dialog
  */
 public class DateTimeSelectorDialogBuilder extends NiftyDialogBuilder implements

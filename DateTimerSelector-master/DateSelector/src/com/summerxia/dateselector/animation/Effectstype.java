@@ -17,7 +17,7 @@ import com.summerxia.dateselector.animation.Slit;
 
 /**
   * 类名称:   Effectstype 
-  * 创建人:    xhl 
+  * 创建人:    gyj 
   * 创建时间:  2014-12-24 下午2:16:20     
   * 版本:      v1.0  
   * 类描述:	NiftyDialogBuilder的动画效果枚举类
