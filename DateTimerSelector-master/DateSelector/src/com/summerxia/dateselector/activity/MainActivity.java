@@ -41,6 +41,9 @@ public class MainActivity extends Activity implements OnClickListener, OnSaveLis
 				dialogBuilder = DateTimeSelectorDialogBuilder.getInstance(this);
 				dialogBuilder.setOnSaveListener(this);
 			}
+			if(daTextView.getText().toString().trim()!=null&&!daTextView.getText().toString().trim().equals("")){
+				dialogBuilder.setDefaultDateTime(daTextView.getText().toString());
+			}
 			dialogBuilder.show();
 			break;
 		case R.id.bt_2:

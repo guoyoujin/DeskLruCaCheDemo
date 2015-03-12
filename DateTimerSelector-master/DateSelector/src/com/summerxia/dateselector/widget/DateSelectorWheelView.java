@@ -131,33 +131,33 @@ public class DateSelectorWheelView extends RelativeLayout implements
 		normalDaysAdapter = new StrericWheelAdapter(normalDays);
 		bigDaysAdapter = new StrericWheelAdapter(bigDays);
 		wvYear.setAdapter(yearsAdapter);
-		wvYear.setCurrentItem(getTodayYear());
+		wvYear.setCurrentItem(getTodayYear(""));
 		wvYear.setCyclic(true);
 		wvMonth.setAdapter(monthsAdapter);
-		wvMonth.setCurrentItem(getTodayMonth());
+		wvMonth.setCurrentItem(getTodayMonth(""));
 		wvMonth.setCyclic(true);
-		if (isBigMonth(getTodayMonth() + 1)) {
+		if (isBigMonth(getTodayMonth("") + 1)) {
 			wvDay.setAdapter(bigDaysAdapter);
-		} else if (getTodayMonth() == 1
+		} else if (getTodayMonth("") == 1
 				&& isLeapYear(wvYear.getCurrentItemValue().subSequence(0, 4)
 						.toString().trim())) {
 			wvDay.setAdapter(smallDaysAdapter);
-		} else if (getTodayMonth() == 1) {
+		} else if (getTodayMonth("") == 1) {
 			wvDay.setAdapter(tinyDaysAdapter);
 		} else {
 			wvDay.setAdapter(normalDaysAdapter);
 		}
-		wvDay.setCurrentItem(getTodayDay());
+		wvDay.setCurrentItem(getTodayDay(""));
 		wvDay.setCyclic(true);
 	}
 	/**
 	 * 获取当前日期的天数的日子
 	 * @return
 	 */
-	private int getTodayDay() {
+	private int getTodayDay(String time) {
 		// 2015年12月01日
 		int position = 0;
-		String today = getToday();
+		String today = (!time.equals("")&&time!=null)? time:getToday();
 		String day = today.substring(8, 10);
 		day = day + " 日";
 		for (int i = 0; i < bigDays.length; i++) {
@@ -172,10 +172,10 @@ public class DateSelectorWheelView extends RelativeLayout implements
 	 * 获取当前日期的月数的位置
 	 * @return
 	 */
-	private int getTodayMonth() {
+	private int getTodayMonth(String time) {
 		// 2015年12月01日
 		int position = 0;
-		String today = getToday();
+		String today = (!time.equals("")&&time!=null)? time:getToday();
 		String month = today.substring(5, 7);
 		month = month + " 月";
 		for (int i = 0; i < months.length; i++) {
@@ -192,9 +192,9 @@ public class DateSelectorWheelView extends RelativeLayout implements
 	 * 
 	 * @return
 	 */
-	private int getTodayYear() {
+	private int getTodayYear(String time) {
 		int position = 0;
-		String today = getToday();
+		String today = (!time.equals("")&&time!=null)? time:getToday();
 		String year = today.substring(0, 4);
 		year = year + " 年";
 		for (int i = 0; i < years.length; i++) {
@@ -402,5 +402,17 @@ public class DateSelectorWheelView extends RelativeLayout implements
 		String str = formatter.format(curDate);
 		return str;
 	}
-
+	
+	public void SetDefaultDateTime(String str){
+		if(wvYear!=null){
+			wvYear.setCurrentItem(getTodayYear(str));
+		}
+		if(wvDay!=null){
+			wvDay.setCurrentItem(getTodayDay(str));
+		}
+		if(wvMonth!=null){
+			wvMonth.setCurrentItem(getTodayMonth(str));
+		}
+		
+	}
 }

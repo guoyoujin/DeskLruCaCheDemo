@@ -184,5 +184,12 @@ public class DateTimeSelectorDialogBuilder extends NiftyDialogBuilder implements
 		super.dismiss();
 		instance = null;
 	}
+	/**
+	 * 设置一个默认时间
+	 * @param time
+	 */
+	public void setDefaultDateTime(String time){
+		dateWheelView.SetDefaultDateTime(time);
+	}
 
 }
