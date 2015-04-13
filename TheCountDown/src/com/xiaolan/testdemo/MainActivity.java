@@ -11,6 +11,8 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +59,14 @@ public class MainActivity extends Activity implements OnTimeCompleteListener {
 
 	}
 	private void initView() {
+		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent=new Intent(MainActivity.this,TestTwoActivity.class);
+				startActivity(intent);
+			}
+		});
 		mTv = (TextView) findViewById(R.id.tv);
 		//初始化文本内容
 		mTv.setText("欢迎光临 : ");
