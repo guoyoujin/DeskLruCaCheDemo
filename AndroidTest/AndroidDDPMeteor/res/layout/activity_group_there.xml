@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".GroupThereActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical" >
+
+        <com.example.androidddpmeteor.view.FButton
+            android:id="@+id/fButton_login_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录" />
+
+        <com.example.androidddpmeteor.view.FButton
+            android:id="@+id/fButton_register_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册" />
+
+        <com.example.androidddpmeteor.view.FButton
+            android:id="@+id/fButton_certification_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="医生认证" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.example.androidddpmeteor.view.FButton
+                android:id="@+id/fButton_account_balance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="账户余额" />
+
+            <com.example.androidddpmeteor.view.FButton
+                android:id="@+id/fButton_amount_paid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="已付金额" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.example.androidddpmeteor.view.FButton
+                android:id="@+id/fButton_Not_paying"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="未付款" />
+
+            <com.example.androidddpmeteor.view.FButton
+                android:id="@+id/fButton_paying"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="已付款" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.example.androidddpmeteor.view.FButton
+                android:id="@+id/fButton_method_of_payment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="结算方式" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <com.example.androidddpmeteor.view.FButton
+            android:id="@+id/fButton_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设置" />
+
+        <com.example.androidddpmeteor.view.FButton
+            android:id="@+id/fButton_opinion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="意见反馈" />
+
+        <com.example.androidddpmeteor.view.FButton
+            android:id="@+id/fButton_Contact_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="联系我们" />
+
+    </LinearLayout>
+
+</RelativeLayout>

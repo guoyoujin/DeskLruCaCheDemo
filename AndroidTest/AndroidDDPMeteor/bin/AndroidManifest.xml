@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.androidddpmeteor"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        <activity
+            android:name="com.example.androidddpmeteor.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.GroupOneActivity"
+            android:label="@string/title_activity_group_one" >
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.GroupTwoActivity"
+            android:label="@string/title_activity_group_two" >
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.GroupThereActivity"
+            android:label="@string/title_activity_group_there" >
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.DoctorLoginActivity"
+            android:label="@string/title_activity_doctor_login" >
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.DoctorOrderActivity"
+            android:label="@string/title_activity_doctor_order" >
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.ChooseHospitalActivity"
+            android:label="@string/title_activity_choose_hospital" >
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.ChooseExamPartActivity"
+            android:label="@string/title_activity_choose_exam_part" >
+        </activity>
+        <activity
+            android:name="com.example.androidddpmeteor.DoctorRegisterActivity"
+            android:label="@string/title_activity_doctor_register" >
+        </activity>
+    </application>
+
+</manifest>
