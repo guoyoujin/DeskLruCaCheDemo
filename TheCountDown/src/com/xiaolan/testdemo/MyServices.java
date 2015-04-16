@@ -13,6 +13,7 @@ public class MyServices extends Service{
 	public static final String ACTION = "com.xiaolan.testdemo.MyServices";  
 	private String tag="TAG";
 	private MyBinder mBinder = new MyBinder();  
+	private CallBack callBack;
 	public IBinder onBind(Intent arg0) {
 		Log.e(tag, "onBind()");
 		return mBinder;
@@ -64,6 +65,10 @@ public class MyServices extends Service{
 			initThread();
 			return null;
 		}
+		
+		public MyServices getServices(){
+			return MyServices.this;
+		}
 		public void initThread(){
 			new Thread(new Runnable() {			
 				@Override
@@ -71,7 +76,11 @@ public class MyServices extends Service{
 					while(true){
 						try {
 							Thread.sleep(1000);
+							
 							String text=getDate(time*1000);
+							if(callBack!=null){
+								callBack.onDataChange(text);
+							}
 							Message msg=new Message();
 							msg.what=0;
 							msg.obj=text;
@@ -117,6 +126,16 @@ public class MyServices extends Service{
 			return h + ":" + m + ":" + s;
 		}
 		
+	}
+	public CallBack getCallBack(){
+		return callBack;	
+	}
+	public void setCallBack(CallBack callBack){
+		this.callBack=callBack;
+	}
+	
+	public static interface CallBack{
+		void onDataChange(String data);
 	}
 	
 }

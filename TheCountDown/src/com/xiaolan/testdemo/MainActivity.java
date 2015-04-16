@@ -9,7 +9,9 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,10 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xiaolan.testdemo.Anticlockwise.OnTimeCompleteListener;
+import com.xiaolan.testdemo.MyServices.CallBack;
 
 public class MainActivity extends Activity implements OnTimeCompleteListener {
 
-    private TextView mTv;
+    private TextView mTv,textView1;
 	private Anticlockwise mTimer;
 	private SharedPreferences sp;
 	private Editor edt;
@@ -28,6 +31,20 @@ public class MainActivity extends Activity implements OnTimeCompleteListener {
 	private int min=0;
 	private int seconds=0;
 	public MyServices.MyBinder binder;//注意MyBinder类必须为public
+	private Handler handler=new Handler(){
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case 0:
+				textView1.setText(msg.obj.toString());
+				break;
+			case 1:
+				break;
+			default:
+				break;
+			}
+		};
+		
+	};
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +76,7 @@ public class MainActivity extends Activity implements OnTimeCompleteListener {
 
 	}
 	private void initView() {
+		textView1=(TextView) findViewById(R.id.textView1);
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -102,6 +120,17 @@ public class MainActivity extends Activity implements OnTimeCompleteListener {
             Log.e("TAG", "onServiceConnected");  
             binder=(MyServices.MyBinder) service;
             binder.setTime(hour, min, seconds, mTv);
+            binder.getServices().setCallBack(new CallBack() {
+				
+				@Override
+				public void onDataChange(String data) {
+					// TODO Auto-generated method stub
+					Message msg=new Message();
+					msg.what=0;
+					msg.obj=data;
+					handler.sendMessage(msg);
+				}
+			});
         }  
         public void onServiceDisconnected(ComponentName name) {  
             Log.e("TAG", "onServiceDisconnected");  
