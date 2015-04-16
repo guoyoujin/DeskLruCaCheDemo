@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.xiaolan.testdemo.MyServices" >
+       <service android:name="com.xiaolan.testdemo.MyServices" >
             <intent-filter>
                 <action android:name="com.xiaolan.testdemo.MyServices" />
             </intent-filter>
