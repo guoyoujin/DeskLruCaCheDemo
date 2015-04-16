@@ -1,38 +1,22 @@
-
-  *.apk
-  bin/
-  gen/
-  .settings/
-  proguard/
-# Eclipse
 .classpath
 .project
 .settings
 eclipsebin
 
-# Ant
 bin
 gen
 build
 out
 lib
 
-# Maven
 target
 pom.xml.*
 release.properties
-coverage.ec
 
-# IntelliJ
 .idea
 *.iml
-*.iws
-*.iqpr
 classes
-gen-external-apklibs
 
-# Robolectric
-tmp
+obj
+
 .DS_Store
-*/bin/*
-*/gen/*
