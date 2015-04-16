@@ -3,9 +3,9 @@
 .settings
 eclipsebin
 
-bin
-gen
-build
+bin/
+gen/
+build/
 out
 lib
 
