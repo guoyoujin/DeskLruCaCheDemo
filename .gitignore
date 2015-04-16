@@ -1,3 +1,9 @@
+
+  *.apk
+  bin/
+  gen/
+  .settings/
+  proguard/
 # Eclipse
 .classpath
 .project
